@@ -12,7 +12,7 @@
 This project aims to extract, process, analyze, predict and visualize data from apartment locations, prices and footage across Guatemala City. 
 An interactive map showing these results is available [here](https://oscar-sandbox.github.io/guatemala-apartments/maps/projects_map_hex.html). 
 
-# The Data
+## The Data
 
 Data was web scraped from the site [Citymap](https://citymap.com.gt/). The dataset contains info on 344 apartment projects and over 1800 apartment types
 in Guatemala City, which were published from 2020 to 2025. Apartment info includes selling price, rent, footage, geolocation and publication date, as well other details 
@@ -22,7 +22,7 @@ Geolocation is available for all entries and footage is shown for almost all ent
 Prices shown are often launch prices, and may be much lower than current market prices, specially for sold out projects. 
 The extraction, processing and exploratory data analysis of this dataset is displayed in the [scripts](https://github.com/Oscar-sandbox/guatemala-apartments/scripts) folder.  
 
-# Interactive Map
+## Interactive Map
 An interactive map showing the apartment projects in Guatemala City is available [here](https://oscar-sandbox.github.io/guatemala-apartments/maps/projects_map_hex.html). 
 Projects are colored based on the median price per meter squared among the apartment types of a given project.  
 When hovering over any of these, additional information is shown, like location and publication date. 
