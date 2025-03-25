@@ -24,5 +24,5 @@ Finally, the map offers estimation of price per meter squared for regions in the
 weighted by distance. A radius of 1km was used, which may be over-optimistic. For further work, it is recommended a smaller radius with a denser dataset. 
 
 <p align="center">
-  <img src="assets/hover_0.png" width=80%/>
+  <img src="assets/hover_0.png" width=90%/>
 </p>
