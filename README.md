@@ -8,3 +8,5 @@
 ![Plotly version](https://img.shields.io/badge/plotly-5.24-blue.svg)
 
 # Analysis of Guatemala City's Apartment Prices
+
+See an interactive map [here]([https://oscar-sandbox](https://oscar-sandbox.github.io/guatemala-apartments/projects_map_hex.html). 
