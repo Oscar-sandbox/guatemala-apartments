@@ -7,4 +7,4 @@
 ![Selenium version](https://img.shields.io/badge/selenium-4.12-blue.svg)
 ![Plotly version](https://img.shields.io/badge/plotly-5.24-blue.svg)
 
-# Analysis of Guatemala City's apartment prices
+# Analysis of Guatemala City's Apartment Prices
