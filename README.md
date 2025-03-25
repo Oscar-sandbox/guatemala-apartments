@@ -9,4 +9,4 @@
 
 # Analysis of Guatemala City's Apartment Prices
 
-See an interactive map [here]([https://oscar-sandbox](https://oscar-sandbox.github.io/guatemala-apartments/projects_map_hex.html). 
+See an interactive map [here](https://oscar-sandbox.github.io/guatemala-apartments/projects_map_hex.html). 
