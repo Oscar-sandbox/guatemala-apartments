@@ -14,7 +14,7 @@ An interactive map showing these results is available [here](https://oscar-sandb
 
 # The Data
 
-Data was web scraped from the site [Citymap](https://citymap.com.gt/). Te dataset contains info on 344 apartment projects and over 1800 apartment types
+Data was web scraped from the site [Citymap](https://citymap.com.gt/). The dataset contains info on 344 apartment projects and over 1800 apartment types
 in Guatemala City, which were published from 2020 to 2025. Apartment info includes selling price, rent, footage, geolocation and publication date, as well other details 
 like number of beds and bathrooms. 
 
