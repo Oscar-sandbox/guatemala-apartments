@@ -9,4 +9,4 @@
 ![Scikit-learn version](https://img.shields.io/badge/sklearn-1.6-blue.svg)
 
 # Analysis of Guatemala City's Apartment Prices
-See an interactive map [here](https://oscar-sandbox.github.io/guatemala-apartments/projects_map_hex.html). 
+See an interactive map [here](https://oscar-sandbox.github.io/guatemala-apartments/maps/projects_map_hex.html). 
