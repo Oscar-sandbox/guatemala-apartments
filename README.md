@@ -9,7 +9,7 @@
 ![Scikit-learn version](https://img.shields.io/badge/sklearn-1.6-blue.svg)
 
 # Analysis of Guatemala City's Apartment Prices
-This project aims to extract, process, analyze, predict and visualize data of apartment locations, prices and footage across Guatemala City. An interactive map showing these results is available [here](https://oscar-sandbox.github.io/guatemala-apartments/maps/projects_map_hex.html). 
+This project aims to extract, process, analyze, predict and visualize data of apartment locations, prices and footage in Guatemala City. An interactive map showing these results is available [here](https://oscar-sandbox.github.io/guatemala-apartments/maps/projects_map_hex.html). 
 
 ## The Data
 
