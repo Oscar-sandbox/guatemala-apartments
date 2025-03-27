@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/portada_0.png" width=100% />
+  <img src="assets/portada_1.png" width=100% />
 </p>
 
 ![License](https://img.shields.io/github/license/Oscar-sandbox/guatemala-apartments)
@@ -21,8 +21,8 @@ Geolocation is available for all entries and footage is shown for almost all of 
 An interactive map showing all apartment projects found is available [here](https://oscar-sandbox.github.io/guatemala-apartments/maps/projects_map_hex.html). Projects are colored based on the median price per squared meter among the apartment types of a given project. When hovering over any of these, additional information is shown, like location and publication date. A detailed table with the prices and footage of all apartments in the project is also displayed. 
 
 Finally, the map offers estimation of price per squared meter for hexagonal regions in the surrounding areas of these projects. This was done with a radial nearest neighbors regressor, 
-weighted by distance. A radius of 1km was used, which may be over-optimistic. For further work, it is recommended a smaller radius with a denser dataset. 
+weighted by distance, with a radius of 500 meters. Price per squared meter is not estimated where there is no apartment project nearby with this value known. 
 
 <p align="center">
-  <img src="assets/hover_0.png" width=90%/>
+  <img src="assets/hover_1.png" width=90%/>
 </p>
