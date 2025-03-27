@@ -382,7 +382,7 @@ fig_projects = px.scatter_map(projects,
   labels={'price_m2_median':'Price/m²'},
   text='project_name',
   custom_data=['zone', 'c_date', 'm_date', 'str_price_m2_median', 'str_info'],
-  zoom=10.5, map_style='carto-positron',
+  zoom=12, map_style='carto-positron',
   center={'lat': 14.59614, 'lon': -90.51288}
 )
 fig_projects.update_traces(
