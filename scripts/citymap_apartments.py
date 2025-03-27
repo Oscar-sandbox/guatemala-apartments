@@ -29,6 +29,8 @@ import plotly.express as px
 from sklearn.linear_model import LinearRegression
 from sklearn.neighbors import RadiusNeighborsRegressor
 
+pd.set_option('display.max_columns', None)
+
 """# Load Data"""
 
 # Load apartments csv and zone borders geojson.
@@ -136,7 +138,7 @@ df.loc[df['apartment_rent_currency'] == 'Q', 'apartment_rent'] /= 7.8
 df.loc[df['apartment_price_currency'] == 'Q', 'apartment_price'] /= 7.8
 df = df.drop(columns=['apartment_rent_currency', 'apartment_price_currency'])
 
-# Compute rent and price per meter squared.
+# Compute rent and price per squared meter.
 df['apartment_rent_m2'] = df['apartment_rent'] / df['apartment_m2']
 df['apartment_price_m2'] = df['apartment_price'] / df['apartment_m2']
 
@@ -260,7 +262,7 @@ fig.savefig('eda/project_price_zone.png', bbox_inches='tight')
 # We now plot each apartment in a price vs m² grid, colored by zone, for the
 # first 3 zones in the previous plot. When fitting a linear model without
 # intercept for each zone, zones 14, 13 and 10 exhibit lower price per
-# meter squared. Zones 10 and 14 are around $2.3k/m², while zone 13 is at
+# squared meter. Zones 10 and 14 are around $2.3k/m², while zone 13 is at
 # $2k/m². This is due to outliers: very large apartments with low price per m².
 top_zones = ['zona-10','zona-13','zona-14']
 
@@ -326,9 +328,8 @@ def project_str_info(r):
   info = project.to_markdown(index=False, tablefmt='github').split('\n')
   info[0] = re.sub('[^|]+', lambda x: f'<b>{x.group()}</b>', info[0])
   r['str_info'] = '<br>'.join(info)
+  r['str_price_m2_median'] = price_m2_fmt(r['price_m2_median']) or 'NA'
 
-  price_m2_median_fmt = lambda x: f'${x/1e3:.2f}k' if ~np.isnan(x) else 'NA'
-  r['str_price_m2_median'] = price_m2_median_fmt(r['price_m2_median'])
   return r
 
 projects = projects.apply(project_str_info, axis=1)
@@ -364,8 +365,8 @@ projects['x'], projects['y'] = project_points.x, project_points.y
 
 # Train a radial nearest neighbors regressor based on the
 # projects' price/m², and predict this value for neighboring hex tiles.
-# Tiles without neighbors in the specified radius (1km) are dropped.
-reg = RadiusNeighborsRegressor(radius=1000, weights='distance')
+# Tiles without neighbors in the specified radius (500m) are dropped.
+reg = RadiusNeighborsRegressor(radius=500, weights='distance')
 reg.fit(projects.dropna(subset=['price_m2_median'])[['x','y']],
         projects.dropna(subset=['price_m2_median'])['price_m2_median'])
 cells['price_m2_median'] = reg.predict(cells[['x','y']])
@@ -377,7 +378,7 @@ cells = cells.set_index('hex_id')
 # median project price/m².
 fig_projects = px.scatter_map(projects,
   lat='lat', lon='lon', color='price_m2_median',
-  color_continuous_scale='viridis',
+  color_continuous_scale='bluered',
   labels={'price_m2_median':'Price/m²'},
   text='project_name',
   custom_data=['zone', 'c_date', 'm_date', 'str_price_m2_median', 'str_info'],
@@ -401,7 +402,7 @@ fig_hex = px.choropleth_map(cells,
   geojson=cells.geometry,
   locations=cells.index,
   color='price_m2_median', opacity=0.3,
-  color_continuous_scale='viridis'
+  color_continuous_scale='bluered'
 )
 fig_hex.update_traces(hoverinfo='skip', hovertemplate=None)
 fig_projects.add_trace(fig_hex.data[0])
